@@ -9,7 +9,7 @@
 import Foundation
 
 class WindJson: Codable {
-    var speed: Int = 0
+    var speed: Double   = 0
     var deg: Int = 0
     
     enum CodingKeys : String, CodingKey {

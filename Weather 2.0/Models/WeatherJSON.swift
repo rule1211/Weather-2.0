@@ -11,13 +11,13 @@ import Foundation
 class WeatherJson: Codable {
     var id: Int = 0
     var main: String = ""
-    var description: String = ""
+    var someText: String = ""
     var icon: String = ""
     
     enum CodingKeys : String, CodingKey {
         case id = "id"
         case main = "main"
-        case description = "description"
+        case someText = "description"
         case icon = "icon"
     }
     

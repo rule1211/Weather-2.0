@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentWindspeedLabel: UILabel!
     @IBOutlet weak var currentVisibilityLabel: UILabel!
     @IBOutlet weak var currentPressureLabel: UILabel!
+    @IBOutlet weak var currentDescriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
@@ -54,6 +55,11 @@ class ViewController: UIViewController {
             
             self.currentTemperatureLabel.text = "\(Int(result.mainJson.current.rounded()))"
             self.currentHumidityLabel.text = "\(result.mainJson.humidity)"
+            self.currentCityLabel.text = "\(result.name)"
+            self.currentWindspeedLabel.text = "\(result.windJson.speed)"
+            self.currentPressureLabel.text = "\(result.mainJson.pressure)"
+            self.currentDescriptionLabel.text = "\(result.weatherJson[0].someText)"
+            
         }
     }
 }
