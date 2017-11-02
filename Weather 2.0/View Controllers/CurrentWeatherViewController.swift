@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class CurrentWeatherViewController: UIViewController {
+class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
     
     // MARK:- Current Weather,Date and Time Label
     @IBOutlet weak var currentCityLabel: UILabel!
@@ -22,12 +22,13 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var currentDescriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var currentTime = Date()
     let date = NSDate()
     let formatter = DateFormatter()
     var currentCity = "Belgrade"
-
+    
     
     // MARK:- ViewDidLoad
     
@@ -39,8 +40,54 @@ class CurrentWeatherViewController: UIViewController {
         timeLabel.text = "\(dateFormatter.string(from: currentTime))"
         formatter.dateFormat = "dd.MM.yyyy"
         dateLabel.text = formatter.string(from: date as Date)
+        
+        
+        searchBar.showsCancelButton = false
+        searchBar.tintColor = .white
+        searchBar.delegate = self
+        searchBar.placeholder = "Find your city here"
+        searchBar.barTintColor = .white
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .white
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         loadData(for: currentCity)
+        
     }
+    // MARK:- SearchBAR
+    
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        searchBar.endEditing(false)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        
+    }
+    // MARK:- SearchBAR Delegate
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        self.currentCity = searchText
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
+        self.loadData(for: currentCity)
+        self.searchBar.resignFirstResponder()
+        searchBar.text = ""
+    }
+    
     
     // MARK:- LoadData
     
@@ -55,4 +102,5 @@ class CurrentWeatherViewController: UIViewController {
         }
     }
 }
+
 

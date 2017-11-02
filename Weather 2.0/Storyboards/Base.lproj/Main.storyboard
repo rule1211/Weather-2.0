@@ -219,9 +219,14 @@
                                     <constraint firstItem="6UJ-Iv-fBB" firstAttribute="leading" secondItem="6mP-6j-QV1" secondAttribute="trailing" id="vkT-LH-aU0"/>
                                 </constraints>
                             </view>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="nbZ-2T-Jhy">
+                                <rect key="frame" x="0.0" y="64" width="206" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3Fe-4E-hUX" firstAttribute="leading" secondItem="nbZ-2T-Jhy" secondAttribute="trailing" constant="19" id="0HF-0D-HK1"/>
                             <constraint firstItem="W7T-nh-FAw" firstAttribute="top" secondItem="sSp-FR-Ape" secondAttribute="bottom" constant="8" symbolic="YES" id="0r0-m0-iul"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jdw-8f-K5f" secondAttribute="bottom" id="2WV-SD-foV"/>
                             <constraint firstItem="W7T-nh-FAw" firstAttribute="leading" secondItem="jdw-8f-K5f" secondAttribute="leading" id="2hR-h7-l07"/>
@@ -233,9 +238,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sSp-FR-Ape" secondAttribute="trailing" constant="8" id="U1h-1z-8yj"/>
                             <constraint firstItem="jdw-8f-K5f" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WaG-xR-ota"/>
                             <constraint firstItem="sSp-FR-Ape" firstAttribute="top" secondItem="3Fe-4E-hUX" secondAttribute="bottom" constant="8" id="fGa-h8-7mL"/>
+                            <constraint firstItem="nbZ-2T-Jhy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g0H-BF-VBx"/>
                             <constraint firstItem="sSp-FR-Ape" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="icr-YT-oXg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jdw-8f-K5f" secondAttribute="trailing" id="jqp-dI-nnX"/>
                             <constraint firstItem="3Fe-4E-hUX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="vzK-Wr-Etc"/>
+                            <constraint firstItem="nbZ-2T-Jhy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zqG-ag-P77"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -245,8 +252,12 @@
                         <outlet property="currentDescriptionLabel" destination="S8N-bK-Zlh" id="FR3-ii-rr2"/>
                         <outlet property="currentHumidityLabel" destination="aof-Hh-qjp" id="TLS-ge-dHW"/>
                         <outlet property="currentIconImage" destination="Xox-ou-aLq" id="DB9-fq-5mn"/>
+                        <outlet property="currentPressureLabel" destination="Y0r-xG-sdH" id="6XW-AY-W5G"/>
                         <outlet property="currentTemperatureLabel" destination="6mP-6j-QV1" id="HTc-M5-uwg"/>
+                        <outlet property="currentVisibilityLabel" destination="hiy-Tw-UNZ" id="84M-Gs-wId"/>
+                        <outlet property="currentWindspeedLabel" destination="TvU-tB-aF2" id="VC7-aY-em5"/>
                         <outlet property="dateLabel" destination="sSp-FR-Ape" id="Ico-LE-NtG"/>
+                        <outlet property="searchBar" destination="nbZ-2T-Jhy" id="IRs-qV-UFf"/>
                         <outlet property="timeLabel" destination="3Fe-4E-hUX" id="1kc-7Z-G29"/>
                     </connections>
                 </viewController>
