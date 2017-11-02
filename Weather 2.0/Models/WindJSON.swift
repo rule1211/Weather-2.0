@@ -9,11 +9,22 @@
 import Foundation
 
 class WindJson: Codable {
-    var speed: Double   = 0
-    var deg: Int = 0
+    var speed:   Double = 0
+    var degrees: Int = 0
     
     enum CodingKeys : String, CodingKey {
         case speed = "speed"
-        case deg = "deg"
+        case degrees = "deg"
+    }
+    
+    required convenience init(from decoder: Decoder) throws {
+        self.init()
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        if let speed = try container.decodeIfPresent(Double.self, forKey: .speed){
+            self.speed = speed
+        }
+        if let degrees1 = try container.decodeIfPresent(Int.self, forKey: .degrees){
+            self.degrees = degrees1
+        }
     }
 }

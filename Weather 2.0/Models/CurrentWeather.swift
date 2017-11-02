@@ -51,8 +51,5 @@ class CurrentWeather: Codable {
         id              = try container.decode(Int.self, forKey: .id)
         cod             = try container.decode(Int.self, forKey: .cod)
         visibility      = try container.decode(Int.self, forKey: .visibility)
-
-
-
     }
 }

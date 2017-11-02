@@ -23,8 +23,8 @@ class ForecastService {
     }
     // MARK:- GetCurrentWeather
     func getCurrentWeatherFor(city: String, completionHandler: @escaping (CurrentWeather) -> Void ) {
-        let url = URL(string: "\(baseUrl)\(city)&appid=\(APIKey)&units=metric")
-        
+        let url = URL(string: "\(baseUrl)\(city.replacingOccurrences(of: " ", with: ""))&appid=\(APIKey)&units=metric")
+        print(url!)
         Alamofire.request(url!).responseData { (dataResponce) in
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .secondsSince1970

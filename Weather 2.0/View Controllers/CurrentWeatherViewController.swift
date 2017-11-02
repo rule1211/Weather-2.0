@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CurrentWeatherViewController.swift
 //  Weather 2.0
 //
 //  Created by Stefan Ruzic on 11.10.17..
@@ -8,10 +8,8 @@
 
 import UIKit
 import Alamofire
-import CoreLocation
 
-
-class ViewController: UIViewController {
+class CurrentWeatherViewController: UIViewController {
     
     // MARK:- Current Weather,Date and Time Label
     @IBOutlet weak var currentCityLabel: UILabel!
@@ -35,31 +33,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        currentCity = "Belgrade"
-        
-        // MARK:- Format Date and Time
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
         timeLabel.text = "\(dateFormatter.string(from: currentTime))"
-        formatter.dateFormat = "dd/M/yyyy" 
+        formatter.dateFormat = "dd.MM.yyyy"
         dateLabel.text = formatter.string(from: date as Date)
-        loadData()
-        
-        
-        
+        loadData(for: currentCity)
     }
+    
     // MARK:- LoadData
-    func loadData(){
-        ForecastService.sharedInstance.getCurrentWeatherFor(city: "Belgrade") { result in
-            
+    
+    func loadData(for city: String){
+        ForecastService.sharedInstance.getCurrentWeatherFor(city: city) { result in
             self.currentTemperatureLabel.text = "\(Int(result.mainJson.current.rounded()))"
             self.currentHumidityLabel.text = "\(result.mainJson.humidity)"
             self.currentCityLabel.text = "\(result.name)"
             self.currentWindspeedLabel.text = "\(result.windJson.speed)"
             self.currentPressureLabel.text = "\(result.mainJson.pressure)"
             self.currentDescriptionLabel.text = "\(result.weatherJson[0].someText)"
-            
         }
     }
 }
