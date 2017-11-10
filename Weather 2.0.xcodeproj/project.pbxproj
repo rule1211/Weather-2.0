@@ -23,9 +23,10 @@
 		BD2E3ECD1F8E15680087E5E1 /* Weather_2_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E3ECC1F8E15680087E5E1 /* Weather_2_0UITests.swift */; };
 		BD7E5A451F8E281800E27730 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD7E5A461F8E281800E27730 /* Alamofire.framework */; };
 		BD7E5A4E1F8FA64C00E27730 /* ForecastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7E5A4D1F8FA64C00E27730 /* ForecastService.swift */; };
-		BD7E5A501F8FA68500E27730 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD7E5A4F1F8FA68400E27730 /* Default-568h@2x.png */; };
 		BD7E5A521F8FABAE00E27730 /* MainSB.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7E5A511F8FABAE00E27730 /* MainSB.xcassets */; };
 		BDA338761FA4A89500C96C8E /* MainJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA338751FA4A89500C96C8E /* MainJSON.swift */; };
+		BDD2D5681FB5A44E00E18B8C /* SevenDaysTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2D5671FB5A44E00E18B8C /* SevenDaysTableView.swift */; };
+		BDD2D56B1FB5A4CB00E18B8C /* SevenDaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD2D56A1FB5A4CB00E18B8C /* SevenDaysCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +72,10 @@
 		BD2E3ECE1F8E15680087E5E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD7E5A461F8E281800E27730 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD7E5A4D1F8FA64C00E27730 /* ForecastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastService.swift; sourceTree = "<group>"; };
-		BD7E5A4F1F8FA68400E27730 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BD7E5A511F8FABAE00E27730 /* MainSB.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MainSB.xcassets; sourceTree = "<group>"; };
 		BDA338751FA4A89500C96C8E /* MainJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainJSON.swift; sourceTree = "<group>"; };
+		BDD2D5671FB5A44E00E18B8C /* SevenDaysTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDaysTableView.swift; sourceTree = "<group>"; };
+		BDD2D56A1FB5A4CB00E18B8C /* SevenDaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDaysCell.swift; sourceTree = "<group>"; };
 		E1540B806A6A8684DDEAA34B /* Pods-Weather 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather 2.0.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather 2.0/Pods-Weather 2.0.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +129,6 @@
 		BD2E3EA01F8E15680087E5E1 = {
 			isa = PBXGroup;
 			children = (
-				BD7E5A4F1F8FA68400E27730 /* Default-568h@2x.png */,
 				BD2E3EAB1F8E15680087E5E1 /* Weather 2.0 */,
 				BD7E5A4A1F8F9FDB00E27730 /* Supporting Files */,
 				BD2E3EC01F8E15680087E5E1 /* Weather 2.0Tests */,
@@ -217,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				BD2E3EAE1F8E15680087E5E1 /* CurrentWeatherViewController.swift */,
+				BDD2D5671FB5A44E00E18B8C /* SevenDaysTableView.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -239,6 +241,7 @@
 				BD1F64F61FA60574008C2829 /* WindJSON.swift */,
 				BD1F64F81FA6064A008C2829 /* CloudsJSON.swift */,
 				BD1F64FC1FA6091F008C2829 /* SysJSON.swift */,
+				BDD2D56A1FB5A4CB00E18B8C /* SevenDaysCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD2E3EB71F8E15680087E5E1 /* LaunchScreen.storyboard in Resources */,
-				BD7E5A501F8FA68500E27730 /* Default-568h@2x.png in Resources */,
 				BD7E5A521F8FABAE00E27730 /* MainSB.xcassets in Resources */,
 				BD2E3EB41F8E15680087E5E1 /* Assets.xcassets in Resources */,
 				BD2E3EB21F8E15680087E5E1 /* Main.storyboard in Resources */,
@@ -436,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDD2D5681FB5A44E00E18B8C /* SevenDaysTableView.swift in Sources */,
 				BD2E3EAF1F8E15680087E5E1 /* CurrentWeatherViewController.swift in Sources */,
 				BD1F64F31FA6013C008C2829 /* WeatherJSON.swift in Sources */,
 				BD1F64F71FA60574008C2829 /* WindJSON.swift in Sources */,
@@ -443,6 +446,7 @@
 				BD1F64FD1FA6091F008C2829 /* SysJSON.swift in Sources */,
 				BD2A6BDA1F90C81F0041CF71 /* LocationManager.swift in Sources */,
 				BD7E5A4E1F8FA64C00E27730 /* ForecastService.swift in Sources */,
+				BDD2D56B1FB5A4CB00E18B8C /* SevenDaysCell.swift in Sources */,
 				BDA338761FA4A89500C96C8E /* MainJSON.swift in Sources */,
 				BD2A6BD61F90BEB80041CF71 /* CurrentWeather.swift in Sources */,
 				BD2E3EAD1F8E15680087E5E1 /* AppDelegate.swift in Sources */,

@@ -23,6 +23,7 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
+
     
     var currentTime = Date()
     let date = NSDate()
@@ -34,6 +35,9 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
+        
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
