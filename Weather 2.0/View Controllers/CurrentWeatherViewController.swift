@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
+class CurrentWeatherViewController: UIViewController {
     
     // MARK:- Current Weather,Date and Time Label
     @IBOutlet weak var currentCityLabel: UILabel!
@@ -25,6 +25,10 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
 
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    var currentWeather: CurrentWeather?
+    var forecastArray = [CurrentWeather?]()
     var currentTime = Date()
     let date = NSDate()
     let formatter = DateFormatter()
@@ -37,7 +41,8 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
 
 
-        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = .short
@@ -59,15 +64,69 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
         loadData(for: currentCity)
         
     }
-    // MARK:- SearchBAR
     
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
     
+    // MARK: - LoadData
+    
+    func loadData(for city: String){
+        ForecastService.sharedInstance.getCurrentWeatherFor(city: city) { result in
+            
+            self.currentWeather = result
+            self.currentTemperatureLabel.text = "\(Int(result.mainJson.current.rounded()))"
+            self.currentHumidityLabel.text = "\(result.mainJson.humidity)"
+            self.currentCityLabel.text = "\(result.name)"
+            self.currentWindspeedLabel.text = "\(result.windJson.speed)"
+            self.currentPressureLabel.text = "\(result.mainJson.pressure)"
+            self.currentDescriptionLabel.text = "\(result.weatherJson[0].someText)"
+        }
+        
+        ForecastService.sharedInstance.getForecastFor(city: city) { (result) in
+            self.forecastArray = result
+            self.tableView.reloadData()
+        }
+    }
+}
+
+//MARK: - TableView
+
+extension CurrentWeatherViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return forecastArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SevenDaysCell
+        
+        let forecastDay = self.forecastArray[indexPath.row]
+        if let vreme = forecastDay {
+            let dateformatter = DateFormatter()
+            dateformatter.dateFormat = "dd.MM HH:mm"
+            let date = dateformatter.string(from: vreme.dateTime)
+            cell.date.text = date
+            cell.tempMax.text = "\(vreme.temperature!.max.rounded().cleanValue)"
+            cell.tempMin.text = "\(vreme.temperature!.min.rounded().cleanValue)"
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+    }
+}
+
+// MARK: - SearchBAR
+
+extension CurrentWeatherViewController: UISearchBarDelegate {
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -77,10 +136,7 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
-        
     }
-    // MARK:- SearchBAR Delegate
-    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
         self.currentCity = searchText
@@ -91,20 +147,4 @@ class CurrentWeatherViewController: UIViewController, UISearchBarDelegate {
         self.searchBar.resignFirstResponder()
         searchBar.text = ""
     }
-    
-    
-    // MARK:- LoadData
-    
-    func loadData(for city: String){
-        ForecastService.sharedInstance.getCurrentWeatherFor(city: city) { result in
-            self.currentTemperatureLabel.text = "\(Int(result.mainJson.current.rounded()))"
-            self.currentHumidityLabel.text = "\(result.mainJson.humidity)"
-            self.currentCityLabel.text = "\(result.name)"
-            self.currentWindspeedLabel.text = "\(result.windJson.speed)"
-            self.currentPressureLabel.text = "\(result.mainJson.pressure)"
-            self.currentDescriptionLabel.text = "\(result.weatherJson[0].someText)"
-        }
-    }
 }
-
-

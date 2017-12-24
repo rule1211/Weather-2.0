@@ -10,11 +10,11 @@ import Foundation
 
 
 class MainJson: Codable {
-    var humidity: Int = 0
-    var pressure: Int = 0
-    var current: Double = 0
-    var tempMin: Double = 0
-    var tempMax: Double = 0
+    var humidity: Double = 0.0
+    var pressure: Double = 0.0
+    var current: Double = 0.0
+    var tempMin: Double = 0.0
+    var tempMax: Double = 0.0
     
     enum CodingKeys : String, CodingKey {
         case humidity = "humidity"
