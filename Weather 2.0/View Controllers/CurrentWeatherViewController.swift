@@ -95,12 +95,17 @@ class CurrentWeatherViewController: UIViewController {
         UIView.animate(withDuration: 1.0, animations: {
             self.arrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         })
-    
+        
+
         if constrainViewTable.constant >= 200 {
             constrainViewTable.constant = 5
         } else {
             if constrainViewTable.constant <= 5 {
                 constrainViewTable.constant = 200
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.view.layoutIfNeeded()
+                self.arrow.transform = self.arrow.transform.rotated(by: .pi)
             }
             
         }
