@@ -24,6 +24,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    @IBOutlet weak var constrainViewTable: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -88,6 +89,17 @@ class CurrentWeatherViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    @IBAction func buttonChangeConst(_ sender: Any) {
+        if constrainViewTable.constant >= 200 {
+            constrainViewTable.constant = 5
+        } else {
+            if constrainViewTable.constant <= 5 {
+                constrainViewTable.constant = 200
+            }
+        }
+    }
+    
 }
 
 //MARK: - TableView
@@ -111,6 +123,7 @@ extension CurrentWeatherViewController: UITableViewDataSource, UITableViewDelega
             cell.date.text = date
             cell.tempMax.text = "\(vreme.temperature!.max.rounded().cleanValue)"
             cell.tempMin.text = "\(vreme.temperature!.min.rounded().cleanValue)"
+        
         }
         
         return cell

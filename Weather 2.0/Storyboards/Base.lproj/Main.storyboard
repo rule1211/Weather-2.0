@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7T-nh-FAw" userLabel="currentWeather">
-                                <rect key="frame" x="0.0" y="128" width="320" height="250"/>
+                                <rect key="frame" x="0.0" y="128" width="320" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="madrid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOE-A0-jWv">
                                         <rect key="frame" x="122" y="0.0" width="76" height="30"/>
@@ -63,7 +63,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPd-H4-FW5" userLabel="HumidityView">
-                                        <rect key="frame" x="8" y="114.5" width="150" height="20"/>
+                                        <rect key="frame" x="8" y="109.5" width="150" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va5-is-eW9">
                                                 <rect key="frame" x="0.0" y="3" width="54.5" height="14"/>
@@ -89,7 +89,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRO-83-KYy" userLabel="DescriptionView">
-                                        <rect key="frame" x="8" y="214.5" width="47.5" height="14.5"/>
+                                        <rect key="frame" x="8" y="209.5" width="47.5" height="14.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nekiteks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8N-bK-Zlh">
                                                 <rect key="frame" x="0.0" y="0.0" width="47.5" height="14.5"/>
@@ -115,7 +115,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDc-5t-0vF" userLabel="WindSpeedView">
-                                        <rect key="frame" x="8" y="139.5" width="150" height="20"/>
+                                        <rect key="frame" x="8" y="134.5" width="150" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Windspeed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeR-dy-fms" userLabel="Windspeed">
                                                 <rect key="frame" x="0.0" y="5" width="67.5" height="10"/>
@@ -142,7 +142,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ard-tD-xsQ" userLabel="PressureView">
-                                        <rect key="frame" x="8" y="164.5" width="150" height="20"/>
+                                        <rect key="frame" x="8" y="159.5" width="150" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pressure:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZL2-NN-lCo" userLabel="Pressure">
                                                 <rect key="frame" x="0.0" y="5" width="53.5" height="10"/>
@@ -169,7 +169,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3A-La-08A" userLabel="VisibilityView">
-                                        <rect key="frame" x="8" y="189.5" width="150" height="20"/>
+                                        <rect key="frame" x="8" y="184.5" width="150" height="20"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visibility:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CA7-RL-JNV" userLabel="Visibility">
                                                 <rect key="frame" x="0.0" y="5" width="51.5" height="10"/>
@@ -195,6 +195,15 @@
                                             <constraint firstItem="hiy-Tw-UNZ" firstAttribute="centerY" secondItem="CA7-RL-JNV" secondAttribute="centerY" id="zll-x7-ZtN"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-Oo-JyI">
+                                        <rect key="frame" x="269" y="205" width="46" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonChangeConst:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jn8-Ag-Qog"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -202,6 +211,7 @@
                                     <constraint firstItem="Xox-ou-aLq" firstAttribute="centerY" secondItem="6mP-6j-QV1" secondAttribute="centerY" id="9Yy-Hq-XEb"/>
                                     <constraint firstItem="sRO-83-KYy" firstAttribute="top" secondItem="R3A-La-08A" secondAttribute="bottom" constant="5" id="D9J-ac-04N"/>
                                     <constraint firstItem="R3A-La-08A" firstAttribute="leading" secondItem="W7T-nh-FAw" secondAttribute="leading" constant="8" id="HCB-va-fhh"/>
+                                    <constraint firstAttribute="bottom" secondItem="5f5-Oo-JyI" secondAttribute="bottom" constant="5" id="IMT-TW-uOP"/>
                                     <constraint firstItem="ard-tD-xsQ" firstAttribute="leading" secondItem="W7T-nh-FAw" secondAttribute="leading" constant="8" id="KA7-Ja-VEX"/>
                                     <constraint firstItem="Xox-ou-aLq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6UJ-Iv-fBB" secondAttribute="trailing" id="LV9-GM-pU4"/>
                                     <constraint firstItem="iOE-A0-jWv" firstAttribute="top" secondItem="W7T-nh-FAw" secondAttribute="top" id="NyR-3B-r6L"/>
@@ -211,6 +221,7 @@
                                     <constraint firstItem="6mP-6j-QV1" firstAttribute="top" secondItem="iOE-A0-jWv" secondAttribute="bottom" constant="3" id="bWV-hJ-5R9"/>
                                     <constraint firstItem="PDc-5t-0vF" firstAttribute="top" secondItem="cPd-H4-FW5" secondAttribute="bottom" constant="5" id="c3y-MX-guN"/>
                                     <constraint firstItem="iOE-A0-jWv" firstAttribute="centerX" secondItem="W7T-nh-FAw" secondAttribute="centerX" id="d63-Rs-6AK"/>
+                                    <constraint firstAttribute="trailing" secondItem="5f5-Oo-JyI" secondAttribute="trailing" constant="5" id="k0L-tD-TZe"/>
                                     <constraint firstItem="ard-tD-xsQ" firstAttribute="top" secondItem="PDc-5t-0vF" secondAttribute="bottom" constant="5" id="lBU-Z5-kTy"/>
                                     <constraint firstItem="Xox-ou-aLq" firstAttribute="leading" secondItem="iOE-A0-jWv" secondAttribute="trailing" constant="17" id="lbj-xz-t9a"/>
                                     <constraint firstItem="R3A-La-08A" firstAttribute="top" secondItem="ard-tD-xsQ" secondAttribute="bottom" constant="5" id="qSf-eF-rYJ"/>
@@ -224,10 +235,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBm-g8-kGv">
-                                <rect key="frame" x="0.0" y="378" width="320" height="190"/>
+                                <rect key="frame" x="0.0" y="368" width="320" height="200"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFa-QC-SIW">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="190"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="NmW-Kr-Pbb" customClass="SevenDaysCell" customModule="Weather_2_0" customModuleProvider="target">
@@ -298,6 +309,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vFa-QC-SIW" secondAttribute="trailing" id="A1u-X2-4xt"/>
+                                    <constraint firstAttribute="height" constant="200" id="ZNn-DM-O3e"/>
                                     <constraint firstItem="vFa-QC-SIW" firstAttribute="top" secondItem="LBm-g8-kGv" secondAttribute="top" id="gMc-Fn-7LW"/>
                                     <constraint firstItem="vFa-QC-SIW" firstAttribute="leading" secondItem="LBm-g8-kGv" secondAttribute="leading" id="jEO-bh-rmy"/>
                                     <constraint firstAttribute="bottom" secondItem="vFa-QC-SIW" secondAttribute="bottom" id="n0S-0E-xzG"/>
@@ -312,7 +324,6 @@
                             <constraint firstItem="W7T-nh-FAw" firstAttribute="leading" secondItem="jdw-8f-K5f" secondAttribute="leading" id="2hR-h7-l07"/>
                             <constraint firstItem="LBm-g8-kGv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="47w-qF-eOz"/>
                             <constraint firstItem="W7T-nh-FAw" firstAttribute="trailing" secondItem="jdw-8f-K5f" secondAttribute="trailing" id="DxA-Wq-8Qo"/>
-                            <constraint firstAttribute="bottom" secondItem="W7T-nh-FAw" secondAttribute="bottom" constant="190" id="J3K-0W-LP9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Fe-4E-hUX" secondAttribute="trailing" constant="8" id="NOS-02-ofy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LBm-g8-kGv" secondAttribute="bottom" id="RIY-tK-cv8"/>
                             <constraint firstItem="3Fe-4E-hUX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="SHV-vm-w1z"/>
@@ -332,6 +343,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tp5-Qo-puB"/>
                     <connections>
+                        <outlet property="constrainViewTable" destination="ZNn-DM-O3e" id="9ze-QV-KXG"/>
                         <outlet property="currentCityLabel" destination="iOE-A0-jWv" id="bPf-xo-pvl"/>
                         <outlet property="currentDescriptionLabel" destination="S8N-bK-Zlh" id="FR3-ii-rr2"/>
                         <outlet property="currentHumidityLabel" destination="aof-Hh-qjp" id="TLS-ge-dHW"/>
