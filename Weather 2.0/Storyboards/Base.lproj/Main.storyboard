@@ -195,9 +195,30 @@
                                             <constraint firstItem="hiy-Tw-UNZ" firstAttribute="centerY" secondItem="CA7-RL-JNV" secondAttribute="centerY" id="zll-x7-ZtN"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-Oo-JyI">
-                                        <rect key="frame" x="269" y="205" width="46" height="30"/>
-                                        <state key="normal" title="Button">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiD-La-f4z">
+                                        <rect key="frame" x="275" y="215" width="40" height="20"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="strelica" translatesAutoresizingMaskIntoConstraints="NO" id="vxS-Je-2al">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vxS-Je-2al" firstAttribute="leading" secondItem="MiD-La-f4z" secondAttribute="leading" id="BdI-YO-PME"/>
+                                            <constraint firstItem="vxS-Je-2al" firstAttribute="top" secondItem="MiD-La-f4z" secondAttribute="top" id="Hl1-Y7-1CV"/>
+                                            <constraint firstAttribute="width" constant="40" id="JEc-uY-YI9"/>
+                                            <constraint firstAttribute="height" constant="20" id="fk7-rv-xzx"/>
+                                            <constraint firstAttribute="trailing" secondItem="vxS-Je-2al" secondAttribute="trailing" id="kXw-RG-Ii4"/>
+                                            <constraint firstAttribute="bottom" secondItem="vxS-Je-2al" secondAttribute="bottom" id="xjJ-0C-wXx"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5f5-Oo-JyI">
+                                        <rect key="frame" x="275" y="215" width="40" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="AUQ-UX-d9N"/>
+                                            <constraint firstAttribute="width" constant="40" id="p3C-fm-Lk3"/>
+                                        </constraints>
+                                        <state key="normal">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -207,6 +228,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="MiD-La-f4z" secondAttribute="bottom" constant="5" id="2ca-ic-mPg"/>
                                     <constraint firstItem="6UJ-Iv-fBB" firstAttribute="top" secondItem="6mP-6j-QV1" secondAttribute="top" id="7zX-Xu-vVB"/>
                                     <constraint firstItem="Xox-ou-aLq" firstAttribute="centerY" secondItem="6mP-6j-QV1" secondAttribute="centerY" id="9Yy-Hq-XEb"/>
                                     <constraint firstItem="sRO-83-KYy" firstAttribute="top" secondItem="R3A-La-08A" secondAttribute="bottom" constant="5" id="D9J-ac-04N"/>
@@ -228,6 +250,7 @@
                                     <constraint firstItem="sRO-83-KYy" firstAttribute="leading" secondItem="W7T-nh-FAw" secondAttribute="leading" constant="8" id="sEz-Im-uaV"/>
                                     <constraint firstItem="PDc-5t-0vF" firstAttribute="leading" secondItem="W7T-nh-FAw" secondAttribute="leading" constant="8" id="vXL-6U-hi8"/>
                                     <constraint firstItem="6UJ-Iv-fBB" firstAttribute="leading" secondItem="6mP-6j-QV1" secondAttribute="trailing" id="vkT-LH-aU0"/>
+                                    <constraint firstAttribute="trailing" secondItem="MiD-La-f4z" secondAttribute="trailing" constant="5" id="wdf-Hv-rU0"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="nbZ-2T-Jhy">
@@ -343,6 +366,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tp5-Qo-puB"/>
                     <connections>
+                        <outlet property="arrow" destination="MiD-La-f4z" id="Apa-rT-T6o"/>
                         <outlet property="constrainViewTable" destination="ZNn-DM-O3e" id="9ze-QV-KXG"/>
                         <outlet property="currentCityLabel" destination="iOE-A0-jWv" id="bPf-xo-pvl"/>
                         <outlet property="currentDescriptionLabel" destination="S8N-bK-Zlh" id="FR3-ii-rr2"/>
@@ -384,5 +408,6 @@
     <resources>
         <image name="cover" width="650" height="400"/>
         <image name="icona" width="225" height="225"/>
+        <image name="strelica" width="212" height="237"/>
     </resources>
 </document>

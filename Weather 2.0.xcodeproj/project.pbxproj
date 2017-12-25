@@ -10,8 +10,6 @@
 		5A8A7C7AE7A92E78283A53EE /* Pods_Weather_2_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889E2EEB746AAF58E49643C /* Pods_Weather_2_0.framework */; };
 		BD1F64F31FA6013C008C2829 /* WeatherJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F64F21FA6013C008C2829 /* WeatherJSON.swift */; };
 		BD1F64F71FA60574008C2829 /* WindJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F64F61FA60574008C2829 /* WindJSON.swift */; };
-		BD1F64F91FA6064A008C2829 /* CloudsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F64F81FA6064A008C2829 /* CloudsJSON.swift */; };
-		BD1F64FD1FA6091F008C2829 /* SysJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1F64FC1FA6091F008C2829 /* SysJSON.swift */; };
 		BD2A6BD61F90BEB80041CF71 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A6BD51F90BEB80041CF71 /* CurrentWeather.swift */; };
 		BD2A6BDA1F90C81F0041CF71 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2A6BD91F90C81F0041CF71 /* LocationManager.swift */; };
 		BD2E3EAD1F8E15680087E5E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2E3EAC1F8E15680087E5E1 /* AppDelegate.swift */; };
@@ -52,8 +50,6 @@
 		A889E2EEB746AAF58E49643C /* Pods_Weather_2_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_2_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1F64F21FA6013C008C2829 /* WeatherJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherJSON.swift; sourceTree = "<group>"; };
 		BD1F64F61FA60574008C2829 /* WindJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindJSON.swift; sourceTree = "<group>"; };
-		BD1F64F81FA6064A008C2829 /* CloudsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsJSON.swift; sourceTree = "<group>"; };
-		BD1F64FC1FA6091F008C2829 /* SysJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SysJSON.swift; sourceTree = "<group>"; };
 		BD2A6BD51F90BEB80041CF71 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		BD2A6BD91F90C81F0041CF71 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BD2E3EA91F8E15680087E5E1 /* Weather 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,8 +232,6 @@
 				BDA338751FA4A89500C96C8E /* MainJSON.swift */,
 				BD1F64F21FA6013C008C2829 /* WeatherJSON.swift */,
 				BD1F64F61FA60574008C2829 /* WindJSON.swift */,
-				BD1F64F81FA6064A008C2829 /* CloudsJSON.swift */,
-				BD1F64FC1FA6091F008C2829 /* SysJSON.swift */,
 				BDD2D56A1FB5A4CB00E18B8C /* SevenDaysCell.swift */,
 			);
 			path = Models;
@@ -438,8 +432,6 @@
 				BD2E3EAF1F8E15680087E5E1 /* CurrentWeatherViewController.swift in Sources */,
 				BD1F64F31FA6013C008C2829 /* WeatherJSON.swift in Sources */,
 				BD1F64F71FA60574008C2829 /* WindJSON.swift in Sources */,
-				BD1F64F91FA6064A008C2829 /* CloudsJSON.swift in Sources */,
-				BD1F64FD1FA6091F008C2829 /* SysJSON.swift in Sources */,
 				BD2A6BDA1F90C81F0041CF71 /* LocationManager.swift in Sources */,
 				BD7E5A4E1F8FA64C00E27730 /* ForecastService.swift in Sources */,
 				BDD2D56B1FB5A4CB00E18B8C /* SevenDaysCell.swift in Sources */,

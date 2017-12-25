@@ -27,6 +27,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var constrainViewTable: NSLayoutConstraint!
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var arrow: UIView!
     
     var currentWeather: CurrentWeather?
     var forecastArray = [CurrentWeather?]()
@@ -90,15 +91,21 @@ class CurrentWeatherViewController: UIViewController {
         }
     }
     
-    @IBAction func buttonChangeConst(_ sender: Any) {
+    @IBAction func buttonChangeConst(_ sender: UIButton) {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.arrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
+        })
+    
         if constrainViewTable.constant >= 200 {
             constrainViewTable.constant = 5
         } else {
             if constrainViewTable.constant <= 5 {
                 constrainViewTable.constant = 200
             }
+            
         }
     }
+    
     
 }
 
