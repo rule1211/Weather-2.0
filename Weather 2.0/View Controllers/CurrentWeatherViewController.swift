@@ -11,7 +11,7 @@ import Alamofire
 
 class CurrentWeatherViewController: UIViewController {
     
-    // MARK:- Current Weather,Date and Time Label
+    // MARK: - Current Weather,Date and Time Label
     @IBOutlet weak var currentCityLabel: UILabel!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var currentIconImage: UIImageView!
@@ -23,9 +23,7 @@ class CurrentWeatherViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
-
     @IBOutlet weak var constrainViewTable: NSLayoutConstraint!
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var arrow: UIView!
     
@@ -41,8 +39,8 @@ class CurrentWeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -51,7 +49,6 @@ class CurrentWeatherViewController: UIViewController {
         timeLabel.text = "\(dateFormatter.string(from: currentTime))"
         formatter.dateFormat = "dd.MM.yyyy"
         dateLabel.text = formatter.string(from: date as Date)
-        
         
         searchBar.showsCancelButton = false
         searchBar.tintColor = .white
@@ -90,29 +87,27 @@ class CurrentWeatherViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    // MARK: - ButtonChangeConst and animation
     
     @IBAction func buttonChangeConst(_ sender: UIButton) {
-        UIView.animate(withDuration: 1.0, animations: {
-            self.arrow.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
-        })
         
-
-        if constrainViewTable.constant >= 200 {
-            constrainViewTable.constant = 5
+        if constrainViewTable.constant < 200 {
+            constrainViewTable.constant = 200
         } else {
-            if constrainViewTable.constant <= 5 {
-                constrainViewTable.constant = 200
-            }
-            UIView.animate(withDuration: 0.5) {
-                self.view.layoutIfNeeded()
-                self.arrow.transform = self.arrow.transform.rotated(by: .pi)
-            }
             
+            constrainViewTable.constant = 5
         }
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+            self.arrow.transform = self.arrow.transform.rotated(by: .pi)
+        }
+        
     }
     
-    
 }
+
+
+
 
 //MARK: - TableView
 
@@ -130,12 +125,12 @@ extension CurrentWeatherViewController: UITableViewDataSource, UITableViewDelega
         let forecastDay = self.forecastArray[indexPath.row]
         if let vreme = forecastDay {
             let dateformatter = DateFormatter()
-            dateformatter.dateFormat = "dd.MM HH:mm"
+            dateformatter.dateFormat = "dd.MM"
             let date = dateformatter.string(from: vreme.dateTime)
             cell.date.text = date
             cell.tempMax.text = "\(vreme.temperature!.max.rounded().cleanValue)"
             cell.tempMin.text = "\(vreme.temperature!.min.rounded().cleanValue)"
-        
+            
         }
         
         return cell
